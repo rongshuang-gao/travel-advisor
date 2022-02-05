@@ -68,6 +68,7 @@ const List = ({
               <Grid ref={elRefs[i]} item key={i} xs={12}>
                 <PlaceDetails
                   place={place}
+                  key={i}
                   selected={Number(childClicked) === i}
                   refProp={elRefs[i]}
                 />

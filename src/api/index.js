@@ -15,8 +15,28 @@ export const getPlacesData = async (type, sw, ne) => {
         },
         headers: {
           "x-rapidapi-host": "travel-advisor.p.rapidapi.com",
-          "x-rapidapi-key":
-            "7981fc1090msh53d85275b14fe09p1e3874jsn48e63bcda072",
+          "x-rapidapi-key": process.env.REACT_APP_RAPIDAPI_KEY,
+        },
+      }
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getWeatherData = async (lat, lng) => {
+  try {
+    const { data } = await axios.get(
+      "https://community-open-weather-map.p.rapidapi.com/weather",
+      {
+        params: {
+          lat: lat,
+          lon: lng,
+        },
+        headers: {
+          "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+          "x-rapidapi-key": process.env.REACT_APP_RAPIDAPI_KEY,
         },
       }
     );
