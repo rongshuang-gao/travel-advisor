@@ -28,11 +28,11 @@ export const getPlacesData = async (type, sw, ne) => {
 export const getWeatherData = async (lat, lng) => {
   try {
     const { data } = await axios.get(
-      "https://community-open-weather-map.p.rapidapi.com/weather",
+      "https://community-open-weather-map.p.rapidapi.com/find",
       {
         params: {
-          lat: lat,
           lon: lng,
+          lat: lat,
         },
         headers: {
           "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
