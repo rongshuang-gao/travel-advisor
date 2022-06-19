@@ -32,6 +32,7 @@ const App = () => {
   useEffect(() => {
     const filteredPlaces = places.filter((place) => place.rating > rating);
     setFilteredPlaces(filteredPlaces);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rating]);
 
   useEffect(() => {
@@ -45,14 +46,12 @@ const App = () => {
       });
 
       getWeatherData(coordinates.lat, coordinates.lng).then((data) => {
-        console.log(data);
+        // console.log(data);
         setWeatherData(data);
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [type, bounds]);
-
-  // console.log(places);
-  // console.log(filteredPlaces);
 
   return (
     <div>
