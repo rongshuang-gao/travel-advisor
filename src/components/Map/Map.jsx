@@ -18,8 +18,6 @@ const Map = ({
   const classes = useStyles();
   const isDesktop = useMediaQuery("(min-width: 600px)");
 
-  console.log(mapStyles);
-
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact

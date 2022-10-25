@@ -4,7 +4,6 @@ export default makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
-    // marginBottom: "30px",
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -18,12 +17,12 @@ export default makeStyles((theme) => ({
   container: {
     padding: "10px 10px 0px 10px",
     height: "100%",
+    overflowY: "scroll",
   },
   marginBottom: {
     marginBottom: "30px",
   },
   list: {
-    height: "75vh",
     overflow: "auto",
   },
 }));

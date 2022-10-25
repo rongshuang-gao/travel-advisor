@@ -13,5 +13,7 @@ export default makeStyles((theme) => ({
   },
   item: {
     padding: "0px !important",
+    height: "100%",
+    overflowY: "scroll",
   },
 }));
