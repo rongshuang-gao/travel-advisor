@@ -21,34 +21,32 @@ const Header = ({ setCoordinates }) => {
   };
 
   return (
-    <div>
-      <AppBar position="static">
-        <Toolbar className={classes.toolbar}>
-          <Typography variant="h5" className={classes.title}>
-            Travel Advisor
+    <AppBar position="static">
+      <Toolbar className={classes.toolbar}>
+        <Typography variant="h5" className={classes.title}>
+          Travel Advisor
+        </Typography>
+        <Box display="flex">
+          <Typography variant="h6" className={classes.title}>
+            Explore new places
           </Typography>
-          <Box display="flex">
-            <Typography variant="h6" className={classes.title}>
-              Explore new places
-            </Typography>
-            <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
-              <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
-                </div>
-                <InputBase
-                  placeholder="Search..."
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                  }}
-                ></InputBase>
+          <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
               </div>
-            </Autocomplete>
-          </Box>
-        </Toolbar>
-      </AppBar>
-    </div>
+              <InputBase
+                placeholder="Search..."
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+              ></InputBase>
+            </div>
+          </Autocomplete>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 };
 

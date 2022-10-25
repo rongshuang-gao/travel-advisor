@@ -8,7 +8,11 @@ import List from "./components/List/List";
 import Map from "./components/Map/Map";
 // import PlaceDetails from "./components/PlaceDetails/PlaceDetails";
 
+import useStyles from "./style.js";
+
 const App = () => {
+  const classes = useStyles();
+
   const [places, setPlaces] = useState([]);
   const [weatherData, setWeatherData] = useState([]);
 
@@ -57,8 +61,8 @@ const App = () => {
     <div>
       <CssBaseline />
       <Header setCoordinates={setCoordinates} />
-      <Grid container spacing={3} style={{ width: "100%" }}>
-        <Grid item xs={12} md={4}>
+      <Grid container spacing={3} className={classes.container}>
+        <Grid item xs={12} md={4} className={classes.item}>
           <List
             places={filteredPlaces.length ? filteredPlaces : places}
             childClicked={childClicked}
@@ -69,7 +73,7 @@ const App = () => {
             setRating={setRating}
           />
         </Grid>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={8} className={classes.item}>
           <Map
             places={filteredPlaces.length ? filteredPlaces : places}
             setCoordinates={setCoordinates}
